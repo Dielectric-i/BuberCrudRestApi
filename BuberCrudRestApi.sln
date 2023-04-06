@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Buber.Contracts", "BuberContracts\Buber.Contracts.csproj", "{0AEF3A48-69CB-4B07-ADC8-646F61AF01A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Buber", "Buber\Buber.csproj", "{C4AF74BF-F497-421A-A347-1483A39166FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{50AEF858-CE1F-45D3-8993-FFA6D0602A6B}"
+	ProjectSection(SolutionItems) = preProject
+		Api.md = Api.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AEF3A48-69CB-4B07-ADC8-646F61AF01A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEF3A48-69CB-4B07-ADC8-646F61AF01A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEF3A48-69CB-4B07-ADC8-646F61AF01A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEF3A48-69CB-4B07-ADC8-646F61AF01A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4AF74BF-F497-421A-A347-1483A39166FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4AF74BF-F497-421A-A347-1483A39166FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4AF74BF-F497-421A-A347-1483A39166FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4AF74BF-F497-421A-A347-1483A39166FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4899E49C-6394-4ECE-B0FA-C60948FFF30E}
+	EndGlobalSection
+EndGlobal

@@ -53,26 +53,37 @@ namespace Buber.Controllers
         {
             ErrorOr<Breakfast> getBreakfastResult = _breakfastService.GetBreakfast(id);
 
-            if (getBreakfastResult.IsError &&
-                getBreakfastResult.FirstError == Errors.Breakfast.NotFound)
-            {
-                return NotFound();
-            }
+            return getBreakfastResult.Match(
+                breakfast => Ok(MapBreakfastResponse(breakfast)),
+                errors => Problem());
 
-            var breakfast = getBreakfastResult.Value;
 
-            var response = new BreakfastResponse(
-                breakfast.Id,
-                breakfast.Name,
-                breakfast.Description,
-                breakfast.StartDateTime,
-                breakfast.EndDateTime,
-                breakfast.LastModifiedDataTime,
-                breakfast.Savory,
-                breakfast.Sweet);
+            //if (getBreakfastResult.IsError &&
+            //    getBreakfastResult.FirstError == Errors.Breakfast.NotFound)
+            //{
+            //    return NotFound();
+            //}
 
-            return Ok(response);
+            //var breakfast = getBreakfastResult.Value;
+
+            //BreakfastResponse response = MapBrealfastResponse(breakfast);
+
+            //return Ok(response);
         }
+
+        private static BreakfastResponse MapBreakfastResponse(Breakfast breakfast)
+        {
+            return new BreakfastResponse(
+                            breakfast.Id,
+                            breakfast.Name,
+                            breakfast.Description,
+                            breakfast.StartDateTime,
+                            breakfast.EndDateTime,
+                            breakfast.LastModifiedDataTime,
+                            breakfast.Savory,
+                            breakfast.Sweet);
+        }
+
         [HttpPut("{id:guid}")]
         public IActionResult UpsertBreakfast(Guid id, UpsertBreakfastRequest request)
         {

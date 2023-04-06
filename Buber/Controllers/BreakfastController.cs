@@ -9,7 +9,7 @@ namespace Buber.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class BreakfastController : ControllerBase
+    public class BreakfastController : ApiController
     {
         private readonly IBreakfastService _breakfastService;
 
@@ -48,6 +48,7 @@ namespace Buber.Controllers
                 routeValues: new {id = breakfast.Id},
                 value: response);
         }
+        
         [HttpGet("{id:guid}")]
         public IActionResult GetBreakfast(Guid id)
         {
@@ -55,7 +56,7 @@ namespace Buber.Controllers
 
             return getBreakfastResult.Match(
                 breakfast => Ok(MapBreakfastResponse(breakfast)),
-                errors => Problem());
+                errors => Problem(errors));
 
 
             //if (getBreakfastResult.IsError &&
@@ -103,6 +104,7 @@ namespace Buber.Controllers
             
             return NoContent();
         }
+        
         [HttpDelete("{id:guid}")]
         public IActionResult DeleteBreakfast(Guid id)
         {

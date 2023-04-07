@@ -79,14 +79,7 @@ namespace Buber.Controllers
 
 
 
-            ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.Create(
-                request.Name,
-                request.Description,
-                request.StartDateTime,
-                request.EndDateTime,
-                request.Savory,
-                request.Sweet,
-                id);
+            ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.From(id, request);
 
                 if (requestToBreakfastResult.IsError)
                 {
